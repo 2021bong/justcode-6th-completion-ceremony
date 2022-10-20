@@ -103,10 +103,6 @@ const Wrap = styled.div`
         line-height: 35px;
       }
 
-      @media screen and (min-width: 414px) and (max-width: 599px) {
-        line-height: 35px;
-      }
-
       @media screen and (max-width: 413px) {
         line-height: 29px;
       }

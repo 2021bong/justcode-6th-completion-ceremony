@@ -135,9 +135,9 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 120px 0;
+    padding: 50px 0;
     width: 50%;
-    height: 85%;
+    height: 70%;
     min-height: 600px;
     max-width: 700px;
     border-radius: 20px;
@@ -147,6 +147,39 @@ const Wrap = styled.div`
     color: ${({ theme }) => theme.text};
     line-height: 35px;
     transition: 300ms;
+
+    @media screen and (min-width: 599px) and (max-width: 909px) {
+      width: 60%;
+      font-size: 26px;
+      line-height: 30px;
+      padding: 60px 0;
+      transition: 300ms;
+    }
+
+    @media screen and (max-height: 800px) {
+      height: 88%;
+      font-size: 20px;
+      line-height: 24px;
+      padding: 20px;
+      transition: 300ms;
+    }
+
+    @media screen and (min-width: 414px) and (max-width: 599px) {
+      width: 70%;
+      height: 70%;
+      font-size: 25px;
+      line-height: 30px;
+      padding: 30px 0;
+      transition: 300ms;
+    }
+
+    @media screen and (max-width: 414px) {
+      width: 90%;
+      font-size: 23px;
+      line-height: 26px;
+      padding: 25px 15px 20px 15px;
+      transition: 300ms;
+    }
 
     .wrapContainer {
       width: 100%;
@@ -174,21 +207,86 @@ const Wrap = styled.div`
         padding: 0 0 20px 0;
         text-align: center;
 
+        @media screen and (min-width: 600px) and (max-width: 909px) {
+          width: 60%;
+          font-size: 26px;
+          line-height: 30px;
+          padding: 20px 0;
+          transition: 300ms;
+        }
+
+        @media screen and (min-width: 414px) and (max-width: 599px) {
+          width: 70%;
+          font-size: 18px;
+          line-height: 30px;
+          transition: 300ms;
+        }
+
+        @media screen and (max-width: 414px) {
+          width: 100%;
+          height: 90%;
+          font-size: 18px;
+          line-height: 26px;
+          padding: 10px 10px;
+          transition: 300ms;
+        }
+
         input {
           border: none;
           background-color: ${({ theme }) => theme.bg};
           border-radius: 15px;
           padding: 8px;
+
+          @media screen and (min-width: 414px) and (max-width: 599px) {
+            font-size: 15px;
+            transition: 300ms;
+          }
+
+          @media screen and (max-width: 414px) {
+            font-size: 13px;
+            transition: 300ms;
+          }
+
+          @media screen and (max-height: 800px) {
+            font-size: 15px;
+            transition: 300ms;
+          }
         }
 
         label {
           margin-right: 10px;
           font-size: 18px;
           font-weight: 700;
+
+          @media screen and (min-width: 414px) and (max-width: 599px) {
+            font-size: 15px;
+            transition: 300ms;
+          }
+
+          @media screen and (max-width: 414px) {
+            font-size: 13px;
+
+            transition: 300ms;
+          }
+
+          @media screen and (max-height: 800px) {
+            font-size: 15px;
+            transition: 300ms;
+          }
         }
 
         .inputContent {
           margin-bottom: 20px;
+
+          @media screen and (min-width: 414px) and (max-width: 599px) {
+            transition: 300ms;
+            margin: 10px;
+          }
+
+          @media screen and (max-width: 414px) {
+            margin: 5px;
+            transition: 300ms;
+          }
         }
 
         .desc {
@@ -255,8 +353,15 @@ const Wrap = styled.div`
 
       @media screen and (max-width: 413px) {
         font-size: 18px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         padding: 12px;
+      }
+
+      @media screen and (max-height: 800px) {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 13px;
+        transition: 300ms;
       }
     }
   }

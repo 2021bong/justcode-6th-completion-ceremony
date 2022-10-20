@@ -86,6 +86,14 @@ const Wrap = styled.div`
     line-height: 36px;
     transition: 300ms;
 
+    @media screen and (max-width: 540px) {
+      width: 80%;
+      font-size: 23px;
+      line-height: 26px;
+      padding: 25px 15px 20px 15px;
+      transition: 300ms;
+    }
+
     .contentContainer {
       margin-bottom: 50px;
       font-weight: 600;
