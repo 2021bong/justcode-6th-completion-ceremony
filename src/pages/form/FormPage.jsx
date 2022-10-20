@@ -7,6 +7,7 @@ import styled from 'styled-components';
 const Form = ({ name, setName }) => {
   const [email, setEmail] = useState('');
   const [attend, setAttend] = useState('참석');
+  const [dinner, setDinner] = useState('먹음');
   const [memo, setMemo] = useState('');
 
   const handleName = (e) => {
@@ -18,6 +19,9 @@ const Form = ({ name, setName }) => {
 
   const handleAttend = (e) => {
     setAttend(e.target.id);
+  };
+  const handleDinner = (e) => {
+    setDinner(e.target.id);
   };
 
   const handleMemo = (e) => {
@@ -68,15 +72,29 @@ const Form = ({ name, setName }) => {
                 value={email}
               />
             </div>
+            <span className='desc'>오프라인 수료식에 참석하시나요?</span>
             <div className='inputContent flex'>
               <label>참석 여부</label>
               <div onChange={handleAttend}>
-                <input name='yseorno' id='참석' type='radio' defaultChecked />
+                <input name='yseorno1' id='참석' type='radio' defaultChecked />
                 <label htmlFor='참석'>참석</label>
-                <input name='yseorno' id='불참석' type='radio' />
+                <input name='yseorno1' id='불참석' type='radio' />
                 <label htmlFor='불참석'>불참석</label>
               </div>
             </div>
+            <span className='desc'>
+              만약 인원이 모인다면 저녁 식사 참석 의향이 있으신가요?
+            </span>
+            <div className='inputContent flex'>
+              <label>식사 여부</label>
+              <div onChange={handleDinner}>
+                <input name='yseorno2' id='먹음' type='radio' defaultChecked />
+                <label htmlFor='먹음'>참석</label>
+                <input name='yseorno2' id='안먹음' type='radio' />
+                <label htmlFor='안먹음'>불참석</label>
+              </div>
+            </div>
+
             <div className='textareaContainer inputContent'>
               <label htmlFor='yes'>마지막으로 하고싶은 말</label>
               <textarea
@@ -134,7 +152,7 @@ const Wrap = styled.div`
       width: 100%;
 
       .titleContainer {
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         font-weight: 900;
         text-align: center;
         text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
@@ -170,11 +188,16 @@ const Wrap = styled.div`
         }
 
         .inputContent {
-          margin-bottom: 10px;
+          margin-bottom: 20px;
+        }
 
-          &:nth-child(3) {
-            margin-bottom: 30px;
-          }
+        .desc {
+          display: block;
+          font-size: 14px;
+          line-height: 17px;
+          color: ${({ theme }) => theme.desc};
+          margin-top: 30px;
+          text-align: left;
         }
 
         .flex {

@@ -10,7 +10,7 @@ import Complete from './pages/form/Complete';
 const Router = () => {
   const [name, setName] = useState('');
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/justcode-6th-completion-ceremony'>
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path='/' element={<FirstPage />} />
