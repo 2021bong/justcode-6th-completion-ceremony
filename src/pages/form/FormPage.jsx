@@ -4,8 +4,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import styled from 'styled-components';
 
-const Form = () => {
-  const [name, setName] = useState('');
+const Form = ({ name, setName }) => {
   const [email, setEmail] = useState('');
   const [attend, setAttend] = useState('참석');
   const [memo, setMemo] = useState('');
@@ -13,7 +12,6 @@ const Form = () => {
   const handleName = (e) => {
     setName(e.target.value);
   };
-
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -92,7 +90,7 @@ const Form = () => {
           </form>
         </div>
         <Link
-          to='/'
+          to='/complete'
           onClick={() => {
             writeData();
           }}

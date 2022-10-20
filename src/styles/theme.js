@@ -30,3 +30,5 @@ export const text = '#333';
 export const desc = '#888';
 
 export const bg = '#f7f7f7';
+
+export const blue = 'rgb(5, 109, 255)';
