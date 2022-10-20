@@ -59,16 +59,19 @@ const Wrap = styled.div`
     font-size: 33px;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
     color: ${({ theme }) => theme.text};
+    transition: 300ms;
 
     @media screen and (min-width: 414px) and (max-width: 909px) {
       font-size: 28px;
       padding: 30px;
+      transition: 300ms;
     }
 
     @media screen and (max-width: 414px) {
       width: 90%;
       font-size: 24px;
       padding: 15px;
+      transition: 300ms;
     }
 
     .faceImg {
@@ -87,7 +90,7 @@ const Wrap = styled.div`
       text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
 
       .impact {
-        background-image: ${({ theme }) => theme.blueToPurpleLeft};
+        background-image: ${({ theme }) => theme.purpleToNavyRight};
         background-size: 100%;
         background-repeat: repeat;
         -webkit-background-clip: text;
@@ -125,8 +128,7 @@ const Wrap = styled.div`
 
       &:hover {
         background: ${({ theme }) => theme.purpleToNavyRight};
-        transform: scale(102%);
-        font-size: 23px;
+        transform: scale(101%);
         transition: 250ms;
 
         &:active {

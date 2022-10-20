@@ -25,6 +25,11 @@ ul, ol, li {
     font-weight: 700;
   }
 
+  input,
+  textarea {
+    outline: none;
+  }
+
 `;
 
 export default GlobalStyle;

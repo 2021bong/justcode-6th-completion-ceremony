@@ -36,14 +36,14 @@ const Home = () => {
           </p>
           <p className='content'>
             드레스 코드 : <b>할로윈</b>
-            <p className='desc'>
+            <span className='desc'>
               그냥 오셔도 됩니다. <br />
               샤이걸&샤이뽀이들을 위한 머리핀을 준비했어요 ;D
-            </p>
+            </span>
           </p>
         </div>
-        <Hand size='2rem' blink={blink} />
-        <Link to='/'>
+        <Hand size='2rem' $blink={blink} />
+        <Link to='/form'>
           <button className='btn'>참석 여부 알리기</button>
         </Link>
       </main>
@@ -59,8 +59,8 @@ const Hand = styled(BsHandIndexThumb)`
     blink
       ? 'translateY(-3px) rotate(180deg)'
       : 'translateY(5px) rotate(180deg)'};
-  opacity: ${({ blink }) => (blink ? 0 : 1)};
-  visibility: ${({ blink }) => (blink ? 'hidden' : 'visible')};
+  opacity: ${({ $blink }) => ($blink ? 0 : 1)};
+  visibility: ${({ $blink }) => ($blink ? 'hidden' : 'visible')};
   transition: 200ms;
 `;
 
@@ -149,6 +149,7 @@ const Wrap = styled.div`
       }
 
       .desc {
+        display: block;
         font-size: 14px;
         line-height: 17px;
         color: ${({ theme }) => theme.desc};
@@ -186,6 +187,7 @@ const Wrap = styled.div`
       &:hover {
         background: ${({ theme }) => theme.purpleToNavyRight};
         transition: 250ms;
+        transform: scale(101%);
 
         &:active {
           background: ${({ theme }) => theme.Navy};
