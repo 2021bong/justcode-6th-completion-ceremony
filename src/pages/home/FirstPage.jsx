@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import JSConfetti from 'js-confetti';
@@ -58,6 +58,7 @@ const Wrap = styled.div`
     background-color: #fff;
     font-size: 33px;
     box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+    color: ${({ theme }) => theme.text};
 
     @media screen and (min-width: 414px) and (max-width: 909px) {
       font-size: 28px;

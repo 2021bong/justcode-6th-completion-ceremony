@@ -15,3 +15,7 @@ export const purpleToNavyRight =
 
 export const Navy =
   'linear-gradient(to bottom, rgba(6, 41, 214, 0.85)0%, rgba(6, 41, 214, 0.85) 100%)';
+
+export const text = '#333';
+
+export const desc = '#888';
