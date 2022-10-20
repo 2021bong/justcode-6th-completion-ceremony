@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import styled from 'styled-components';
 
 const Form = () => {
-  const [nameValue, setNameValue] = useState('');
-  const [emailValue, setEmailValue] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [attend, setAttend] = useState('참석');
-  const [memoValue, setMemoValue] = useState('');
+  const [memo, setMemo] = useState('');
 
   const handleName = (e) => {
-    setNameValue(e.target.value);
+    setName(e.target.value);
   };
 
   const handleEmail = (e) => {
-    setEmailValue(e.target.value);
+    setEmail(e.target.value);
   };
 
   const handleAttend = (e) => {
@@ -21,7 +23,25 @@ const Form = () => {
   };
 
   const handleMemo = (e) => {
-    setMemoValue(e.target.value);
+    setMemo(e.target.value);
+  };
+
+  const writeData = async () => {
+    const firebaseConfig = {
+      apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+      authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+      projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+      storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+      appId: import.meta.env.VITE_FIREBASE_APP_ID,
+      measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+    };
+
+    initializeApp(firebaseConfig);
+    const db = getFirestore();
+    const data = { name, email, attend, memo, createdAt: new Date() };
+
+    await addDoc(collection(db, 'attend-survey'), data);
   };
 
   return (
@@ -36,15 +56,10 @@ const Form = () => {
               </span>
             </h1>
           </div>
-          <form className='formContainer'>
+          <form className='formContainer' onSubmit={(e) => e.preventDefault()}>
             <div className='inputContent flex'>
               <label htmlFor='name'>이름</label>
-              <input
-                id='name'
-                type='text'
-                onChange={handleName}
-                value={nameValue}
-              />
+              <input id='name' type='text' onChange={handleName} value={name} />
             </div>
             <div className='inputContent flex'>
               <label htmlFor='name'>이메일</label>
@@ -52,7 +67,7 @@ const Form = () => {
                 id='email'
                 type='text'
                 onChange={handleEmail}
-                value={emailValue}
+                value={email}
               />
             </div>
             <div className='inputContent flex'>
@@ -67,7 +82,7 @@ const Form = () => {
             <div className='textareaContainer inputContent'>
               <label htmlFor='yes'>마지막으로 하고싶은 말</label>
               <textarea
-                value={memoValue}
+                value={memo}
                 onChange={handleMemo}
                 name='memo'
                 id='memo'
@@ -78,18 +93,9 @@ const Form = () => {
         </div>
         <Link
           to='/'
-          onClick={() =>
-            console.log(
-              'nameValue',
-              nameValue,
-              'emailValue',
-              emailValue,
-              'attend',
-              attend,
-              'memoValue',
-              memoValue
-            )
-          }
+          onClick={() => {
+            writeData();
+          }}
         >
           <button className='btn'>제출하기</button>
         </Link>
