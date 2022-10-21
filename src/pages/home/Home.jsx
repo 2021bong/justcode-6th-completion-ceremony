@@ -54,7 +54,7 @@ const Home = () => {
 export default Home;
 
 const Hand = styled(BsHandIndexThumb)`
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   transform: ${({ blink }) =>
     blink
       ? 'translateY(-3px) rotate(180deg)'
@@ -80,47 +80,47 @@ const Wrap = styled.div`
     width: 65%;
     height: 70%;
     min-height: 600px;
-    padding: 50px;
-    border-radius: 20px;
+    padding: 3.125rem;
+    border-radius: 1.25rem;
     background-color: #fff;
-    font-size: 33px;
-    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+    font-size: 2.063rem;
+    box-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.15);
     color: ${({ theme }) => theme.text};
-    line-height: 40px;
+    line-height: 2.5rem;
     transition: 300ms;
 
     @media screen and (min-width: 414px) and (max-width: 909px) {
       transition: 300ms;
       width: 70%;
-      font-size: 28px;
-      padding: 30px;
-      line-height: 35px;
+      font-size: 1.75rem;
+      padding: 1.875rem;
+      line-height: 2.188rem;
     }
 
     @media screen and (min-width: 414px) and (max-width: 599px) {
       transition: 300ms;
       width: 70%;
-      line-height: 35px;
-      padding: 20px 0;
+      line-height: 2.188rem;
+      padding: 1.25rem 0;
     }
 
     @media screen and (max-width: 414px) {
       transition: 300ms;
       width: 90%;
-      font-size: 27px;
-      padding: 18px 0;
+      font-size: 1.688rem;
+      padding: 1.125rem 0;
     }
 
     .titleContainer {
       width: 70%;
       border-bottom: 1px solid #ccc;
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
 
       .title {
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
         font-weight: 900;
         text-align: center;
-        text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+        text-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.2);
 
         .impact {
           background-image: ${({ theme }) => theme.blueToPurpleRight};
@@ -136,38 +136,38 @@ const Wrap = styled.div`
 
     .contentContainer {
       text-align: center;
-      margin-bottom: 30px;
-      font-size: 20px;
+      margin-bottom: 1.875rem;
+      font-size: 1.25rem;
 
       .content {
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
 
         &:last-child {
           margin-bottom: 0;
-          line-height: 30px;
+          line-height: 1.875rem;
         }
       }
 
       .desc {
         display: block;
-        font-size: 14px;
-        line-height: 17px;
+        font-size: 0.875rem;
+        line-height: 1.063rem;
         color: ${({ theme }) => theme.desc};
       }
 
       @media screen and (min-width: 414px) and (max-width: 909px) {
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
       }
 
       @media screen and (min-width: 414px) and (max-width: 599px) {
-        line-height: 35px;
-        font-size: 18px;
+        line-height: 2.188rem;
+        font-size: 1.125rem;
       }
 
       @media screen and (max-width: 413px) {
-        font-size: 18px;
-        line-height: 29px;
+        font-size: 1.125rem;
+        line-height: 1.813rem;
       }
     }
 
@@ -182,7 +182,7 @@ const Wrap = styled.div`
       font-size: 22px;
       font-weight: 600;
       transition: 250ms;
-      box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.2);
 
       &:hover {
         background: ${({ theme }) => theme.purpleToNavyRight};
@@ -195,14 +195,14 @@ const Wrap = styled.div`
       }
 
       @media screen and (min-width: 414px) and (max-width: 909px) {
-        font-size: 18px;
-        padding: 13px;
+        font-size: 1.125rem;
+        padding: 0.813rem;
       }
 
       @media screen and (max-width: 413px) {
-        font-size: 18px;
-        margin-bottom: 30px;
-        padding: 12px;
+        font-size: 1.125rem;
+        margin-bottom: 1.875rem;
+        padding: 0.75rem;
       }
     }
   }

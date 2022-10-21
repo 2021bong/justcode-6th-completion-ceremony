@@ -20,6 +20,7 @@ const Form = ({ name, setName }) => {
   const handleAttend = (e) => {
     setAttend(e.target.id);
   };
+
   const handleDinner = (e) => {
     setDinner(e.target.id);
   };
@@ -41,7 +42,7 @@ const Form = ({ name, setName }) => {
 
     initializeApp(firebaseConfig);
     const db = getFirestore();
-    const data = { name, email, attend, memo, createdAt: new Date() };
+    const data = { name, email, attend, dinner, memo, createdAt: new Date() };
 
     await addDoc(collection(db, 'attend-survey'), data);
   };
@@ -135,49 +136,57 @@ const Wrap = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 0;
+    padding: 3.125rem 0;
     width: 50%;
     height: 70%;
-    min-height: 600px;
+    min-height: 37.5rem;
     max-width: 700px;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     background-color: #fff;
-    font-size: 30px;
-    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.15);
+    font-size: 1.875rem;
+    box-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.15);
     color: ${({ theme }) => theme.text};
-    line-height: 35px;
+    line-height: 2.188rem;
     transition: 300ms;
 
     @media screen and (min-width: 599px) and (max-width: 909px) {
       width: 60%;
-      font-size: 26px;
-      line-height: 30px;
-      padding: 60px 0;
+      font-size: 2.188rem;
+      line-height: 1.875rem;
+      padding: 3.75rem 0;
       transition: 300ms;
     }
 
-    @media screen and (max-height: 800px) {
+    @media screen and (min-height: 768px) and (max-height: 970px) {
       height: 88%;
-      font-size: 20px;
-      line-height: 24px;
-      padding: 20px;
+      font-size: 2rem;
+      line-height: 2.2rem;
+      padding: 3rem 1.5rem;
+      transition: 300ms;
+    }
+
+    @media screen and (max-height: 768px) {
+      height: 88%;
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      padding: 3rem 1.5rem;
       transition: 300ms;
     }
 
     @media screen and (min-width: 414px) and (max-width: 599px) {
       width: 70%;
       height: 70%;
-      font-size: 25px;
-      line-height: 30px;
-      padding: 30px 0;
+      font-size: 1.563rem;
+      line-height: 1.875rem;
+      padding: 1.875rem 0;
       transition: 300ms;
     }
 
     @media screen and (max-width: 414px) {
       width: 90%;
-      font-size: 23px;
-      line-height: 26px;
-      padding: 25px 15px 20px 15px;
+      font-size: 1.438rem;
+      line-height: 1.625rem;
+      padding: 1.563rem 0.938rem 1.25rem 0.938rem;
       transition: 300ms;
     }
 
@@ -185,10 +194,10 @@ const Wrap = styled.div`
       width: 100%;
 
       .titleContainer {
-        margin-bottom: 30px;
+        margin-bottom: 1.875rem;
         font-weight: 900;
         text-align: center;
-        text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+        text-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.2);
 
         .impact {
           background-image: ${({ theme }) => theme.purpleToNavyTopTo};
@@ -204,86 +213,96 @@ const Wrap = styled.div`
       .formContainer {
         width: 50%;
         margin: 0 auto;
-        padding: 0 0 20px 0;
+        padding: 0 0 1.25rem 0;
         text-align: center;
 
         @media screen and (min-width: 600px) and (max-width: 909px) {
           width: 60%;
-          font-size: 26px;
-          line-height: 30px;
-          padding: 20px 0;
+          font-size: 1.625rem;
+          line-height: 1.875rem;
+          padding: 1.25rem 0;
           transition: 300ms;
         }
 
-        @media screen and (min-width: 414px) and (max-width: 599px) {
+        @media screen and (min-width: 40.875rem) and (max-width: 599px) {
           width: 70%;
-          font-size: 18px;
-          line-height: 30px;
+          font-size: 1.125rem;
+          line-height: 1.875rem;
           transition: 300ms;
         }
 
-        @media screen and (max-width: 414px) {
+        @media screen and (max-width: 40.875rem) {
           width: 100%;
           height: 90%;
-          font-size: 18px;
-          line-height: 26px;
+          font-size: 1.125rem;
+          line-height: 1.625rem;
           padding: 10px 10px;
           transition: 300ms;
+        }
+
+        @media screen and (min-height: 768px) and (max-height: 970px) {
+          width: 95%;
+          padding: 0;
         }
 
         input {
           border: none;
           background-color: ${({ theme }) => theme.bg};
-          border-radius: 15px;
+          border-radius: 0.938rem;
           padding: 8px;
 
-          @media screen and (min-width: 414px) and (max-width: 599px) {
-            font-size: 15px;
+          @media screen and (min-width: 40.875rem) and (max-width: 599px) {
+            font-size: 0.938rem;
             transition: 300ms;
           }
 
-          @media screen and (max-width: 414px) {
-            font-size: 13px;
+          @media screen and (max-width: 40.875rem) {
+            font-size: 0.813rem;
             transition: 300ms;
           }
 
-          @media screen and (max-height: 800px) {
-            font-size: 15px;
+          @media screen and (max-height: 768px) {
+            font-size: 0.938rem;
+            transition: 300ms;
+          }
+
+          @media screen and (min-height: 768px) and (max-height: 970px) {
+            font-size: 1rem;
+            line-height: 2.2rem;
             transition: 300ms;
           }
         }
 
         label {
           margin-right: 10px;
-          font-size: 18px;
+          font-size: 1.125rem;
           font-weight: 700;
 
-          @media screen and (min-width: 414px) and (max-width: 599px) {
-            font-size: 15px;
+          @media screen and (min-width: 40.875rem) and (max-width: 599px) {
+            font-size: 0.938rem;
             transition: 300ms;
           }
 
-          @media screen and (max-width: 414px) {
-            font-size: 13px;
-
+          @media screen and (max-width: 40.875rem) {
+            font-size: 0.813rem;
             transition: 300ms;
           }
 
           @media screen and (max-height: 800px) {
-            font-size: 15px;
+            font-size: 0.938rem;
             transition: 300ms;
           }
         }
 
         .inputContent {
-          margin-bottom: 20px;
+          margin-bottom: 1.25rem;
 
-          @media screen and (min-width: 414px) and (max-width: 599px) {
+          @media screen and (min-width: 40.875rem) and (max-width: 599px) {
             transition: 300ms;
             margin: 10px;
           }
 
-          @media screen and (max-width: 414px) {
+          @media screen and (max-width: 40.875rem) {
             margin: 5px;
             transition: 300ms;
           }
@@ -291,10 +310,10 @@ const Wrap = styled.div`
 
         .desc {
           display: block;
-          font-size: 14px;
-          line-height: 17px;
+          font-size: 0.875rem;
+          line-height: 1.063rem;
           color: ${({ theme }) => theme.desc};
-          margin-top: 30px;
+          margin-top: 1.875rem;
           text-align: left;
         }
 
@@ -307,15 +326,15 @@ const Wrap = styled.div`
           display: flex;
           flex-direction: column;
           border-top: 1px solid #ccc;
-          padding-top: 20px;
+          padding-top: 1.25rem;
 
           textarea {
             border: none;
             background-color: ${({ theme }) => theme.bg};
-            border-radius: 20px;
-            padding: 15px;
+            border-radius: 1.25rem;
+            padding: 0.938rem;
             width: 100%;
-            height: 80px;
+            height: 5rem;
             resize: none;
           }
         }
@@ -325,16 +344,16 @@ const Wrap = styled.div`
     .btn {
       width: 25%;
       min-width: 218px;
-      padding: 15px;
+      padding: 0.938rem;
       background: ${({ theme }) => theme.purpleToNavyRight};
 
       border: none;
-      border-radius: 15px;
+      border-radius: 0.938rem;
       color: #fff;
-      font-size: 22px;
+      font-size: 1.375rem;
       font-weight: 600;
       transition: 250ms;
-      box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.2);
 
       &:hover {
         transform: scale(101%);
@@ -346,21 +365,21 @@ const Wrap = styled.div`
         }
       }
 
-      @media screen and (min-width: 414px) and (max-width: 909px) {
-        font-size: 18px;
-        padding: 13px;
+      @media screen and (min-width: 40.875rem) and (max-width: 909px) {
+        font-size: 1.125rem;
+        padding: 0.813rem;
       }
 
-      @media screen and (max-width: 413px) {
-        font-size: 18px;
-        margin-bottom: 20px;
+      @media screen and (max-width: 40.813rem) {
+        font-size: 1.125rem;
+        margin-bottom: 1.25rem;
         padding: 12px;
       }
 
       @media screen and (max-height: 800px) {
-        font-size: 18px;
-        line-height: 22px;
-        padding: 13px;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+        padding: 0.813rem;
         transition: 300ms;
       }
     }
