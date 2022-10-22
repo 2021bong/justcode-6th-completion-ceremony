@@ -33,7 +33,6 @@
     react-router-dom
     react-scripts
 
-    dotenv
     firebase
 
     styled-components
