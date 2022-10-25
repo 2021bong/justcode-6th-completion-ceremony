@@ -32,3 +32,5 @@ export const desc = '#888';
 export const bg = '#f7f7f7';
 
 export const blue = 'rgb(5, 109, 255)';
+
+export const purple = 'rgb(197, 51, 255)';

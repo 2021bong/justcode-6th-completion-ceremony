@@ -6,6 +6,7 @@ import FirstPage from './pages/home/FirstPage';
 import Home from './pages/home/Home';
 import Form from './pages/form/FormPage';
 import Complete from './pages/form/Complete';
+import Message from './pages/message/Message';
 
 const Router = () => {
   const [name, setName] = useState('');
@@ -23,6 +24,7 @@ const Router = () => {
             path='/complete'
             element={<Complete name={name} setName={setName} />}
           />
+          <Route path='/message' element={<Message />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

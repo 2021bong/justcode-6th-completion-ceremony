@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 import { GiPartyPopper } from 'react-icons/gi';
+import { AiTwotoneContainer } from 'react-icons/ai';
 import { useEffect, useState } from 'react';
 
 const Complete = ({ name, setName }) => {
@@ -39,6 +41,11 @@ const Complete = ({ name, setName }) => {
           <p>
             수료식 때 만나요<Shakehand shake={shake}>👋</Shakehand>
           </p>
+          <Link to='/message'>
+            <p className='message' size='10rem'>
+              <AiTwotoneContainer />
+            </p>
+          </Link>
         </div>
       </div>
     </Wrap>
@@ -118,6 +125,19 @@ const Wrap = styled.div`
         -moz-background-clip: text;
         -webkit-text-fill-color: transparent;
         -moz-text-fill-color: transparent;
+      }
+
+      .message {
+        margin-top: 15px;
+        cursor: pointer;
+
+        &:hover {
+          color: ${({ theme }) => theme.blue};
+        }
+
+        &:active {
+          color: ${({ theme }) => theme.purple};
+        }
       }
     }
   }

@@ -30,6 +30,13 @@ ul, ol, li {
     outline: none;
   }
 
+  body{
+    -ms-overflow-style: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
 `;
 
 export default GlobalStyle;
