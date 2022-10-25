@@ -23,7 +23,7 @@ const Complete = ({ name, setName }) => {
 
     const blinkTime = setInterval(() => {
       setBlink((prev) => !prev);
-    }, 2000);
+    }, 2200);
 
     return () => {
       clearInterval(shakeTime);
@@ -63,7 +63,7 @@ const Complete = ({ name, setName }) => {
 
 export default Complete;
 
-const ClickMessage = styled.p`
+const ClickMessage = styled.div`
   color: ${({ theme }) => theme.text};
   transform: ${({ $blink }) =>
     $blink ? 'scale(99%) translateY(-8px)' : 'scale(102%) translateY(0)'};
@@ -132,6 +132,7 @@ const Wrap = styled.div`
       font-weight: 600;
       text-align: center;
       text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+      transform: translateY(20px);
 
       .icon {
         color: ${({ theme }) => theme.blue};
