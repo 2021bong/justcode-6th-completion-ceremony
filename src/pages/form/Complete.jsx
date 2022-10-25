@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import JSConfetti from 'js-confetti';
 import { GiPartyPopper } from 'react-icons/gi';
 import { AiTwotoneContainer } from 'react-icons/ai';
+import { BsHandIndexThumb } from 'react-icons/bs';
 import { useEffect, useState } from 'react';
 
 const Complete = ({ name, setName }) => {
   const [shake, setShake] = useState(false);
   const [fire, setFire] = useState(false);
   const jsConfetti = new JSConfetti();
+  const [blink, setBlink] = useState(false);
 
   useEffect(() => {
     !name && setName('저코 6기');
@@ -19,8 +21,13 @@ const Complete = ({ name, setName }) => {
       setFire((prev) => !prev);
     }, 300);
 
+    const blinkTime = setInterval(() => {
+      setBlink((prev) => !prev);
+    }, 2000);
+
     return () => {
       clearInterval(shakeTime);
+      clearInterval(blinkTime);
     };
   }, []);
 
@@ -42,9 +49,11 @@ const Complete = ({ name, setName }) => {
             수료식 때 만나요<Shakehand shake={shake}>👋</Shakehand>
           </p>
           <Link to='/message'>
-            <p className='message' size='10rem'>
-              <AiTwotoneContainer />
-            </p>
+            <AiTwotoneContainer className='message' size='1.8rem' />
+            <ClickMessage $blink={blink}>
+              <BsHandIndexThumb size='1.5rem' />
+              <p className='desc'>눌러서 모두의 메세지 보러가기</p>
+            </ClickMessage>
           </Link>
         </div>
       </div>
@@ -53,6 +62,24 @@ const Complete = ({ name, setName }) => {
 };
 
 export default Complete;
+
+const ClickMessage = styled.p`
+  color: ${({ theme }) => theme.text};
+  transform: ${({ $blink }) =>
+    $blink ? 'scale(99%) translateY(-8px)' : 'scale(102%) translateY(0)'};
+  transition: 200ms;
+  opacity: ${({ $blink }) => ($blink ? 1 : 0)};
+
+  .desc {
+    transform: ${({ $blink }) =>
+      $blink
+        ? 'scale(99%) translateY(-10px)'
+        : 'scale(102%) translateY(-10px)'};
+    color: ${({ theme }) => theme.text};
+    font-size: 0.8rem;
+    transition: 200ms;
+  }
+`;
 
 const Shakehand = styled.span`
   transition: 300ms;
@@ -102,7 +129,6 @@ const Wrap = styled.div`
     }
 
     .contentContainer {
-      margin-bottom: 50px;
       font-weight: 600;
       text-align: center;
       text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
@@ -130,13 +156,14 @@ const Wrap = styled.div`
       .message {
         margin-top: 15px;
         cursor: pointer;
+        color: ${({ theme }) => theme.purple};
 
         &:hover {
           color: ${({ theme }) => theme.blue};
         }
 
         &:active {
-          color: ${({ theme }) => theme.purple};
+          color: ${({ theme }) => theme.pink};
         }
       }
     }
