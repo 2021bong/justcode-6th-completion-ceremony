@@ -46,8 +46,6 @@ const Message = () => {
     loadData();
   }, []);
 
-  console.log(list);
-
   return (
     <Body>
       <div className='mainContainer'>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import * as theme from './styles/theme';
 import FirstPage from './pages/home/FirstPage';
@@ -11,7 +11,7 @@ import Message from './pages/message/Message';
 const Router = () => {
   const [name, setName] = useState('');
   return (
-    <BrowserRouter basename='/justcode-6th-completion-ceremony'>
+    <HashRouter>
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path='/' element={<FirstPage />} />
@@ -27,7 +27,7 @@ const Router = () => {
           <Route path='/message' element={<Message />} />
         </Routes>
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
