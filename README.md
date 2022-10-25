@@ -2,7 +2,7 @@
 
 # ✨ JUSTCODE 6기 오프라인 수료식 참가 여부 조사 ✨
 
-## 링크는 이쪽 👉👉👉 <a href="https://2021bong.github.io/justcode-6th-completion-ceremony/" target="_blank">설문을 진행해주세요. 🎉</a>
+## 링크는 이쪽 👉👉👉 [설문을 진행해주세요. 🎉](https://2021bong.github.io/justcode-6th-completion-ceremony/){: target="_blank"}
 
 ![main-face](https://user-images.githubusercontent.com/49029756/197056639-54793892-2c26-4888-b9cc-9f9cd4d57126.png)
 
@@ -136,7 +136,9 @@ http://localhost:5173/justcode-6th-completion-ceremony/
 <img width="1381" alt="랜딩페이지" src="https://user-images.githubusercontent.com/49029756/197151706-edee6e63-1cbe-4634-9cbd-72d64eab604f.png">
 <img width="1360" alt="메인페이지" src="https://user-images.githubusercontent.com/49029756/197151722-465358ef-2abb-460c-a3fa-c0caa74ba414.png">
 <img width="1089" alt="설문 페이지" src="https://user-images.githubusercontent.com/49029756/197151725-32a53402-9dcc-4b87-9088-f8abf079e891.png">
-<img width="1235" alt="설문 제출 완료페이지1" src="https://user-images.githubusercontent.com/49029756/197151727-679685ec-5304-4607-94e0-59e58877acbf.png">
-<img width="1200" alt="설문 제출 완료페이지2" src="https://user-images.githubusercontent.com/49029756/197151730-43e98ec0-af17-4cc7-95cc-82a6d54d9b97.png">
+<img width="1154" alt="제출 완료 페이지1" src="https://user-images.githubusercontent.com/49029756/197763743-41a86840-7fcb-4c4c-89ee-95a6f9fe17e5.png">
+<img width="1008" alt="제출 완료 페이지2" src="https://user-images.githubusercontent.com/49029756/197763758-be75c522-2199-44f6-a3cd-0547168ac054.png">
+<img width="1307" alt="메세지 페이지" src="https://user-images.githubusercontent.com/49029756/197763725-89196c75-8a0b-4754-a9bf-275a91bab596.png">
+
 
 </div>
