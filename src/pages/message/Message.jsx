@@ -52,7 +52,7 @@ const Message = () => {
     <Body>
       <div className='mainContainer'>
         <Link to='/' className='goToHome'>
-          <GiPartyHat size='3rem' />
+          <GiPartyHat size='2.5rem' />
         </Link>
         <div className='titleContainer'>
           <h1>
@@ -105,6 +105,12 @@ const Body = styled.div`
     color: ${({ theme }) => theme.text};
     transition: 300ms;
 
+    @media screen and (max-width: 615px) {
+      width: 90%;
+      height: 85%;
+      padding: 1rem;
+    }
+
     .goToHome {
       position: absolute;
       top: 1rem;
@@ -119,6 +125,12 @@ const Body = styled.div`
       &:active {
         color: ${({ theme }) => theme.purple};
       }
+
+      @media screen and (max-width: 615px) {
+        padding: 10px;
+        top: 0;
+        left: 0;
+      }
     }
 
     .titleContainer {
@@ -127,6 +139,10 @@ const Body = styled.div`
       font-weight: 900;
       text-align: center;
       text-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.2);
+
+      @media screen and (max-width: 615px) {
+        font-size: 1.5rem;
+      }
 
       .title {
         background-image: ${({ theme }) => theme.purpleToNavyRight};
@@ -148,14 +164,22 @@ const Body = styled.div`
       flex-direction: column;
       align-items: center;
 
+      @media screen and (max-width: 615px) {
+        padding: 10px;
+      }
+
       .card {
-        width: 90%;
-        min-width: 300px;
+        width: 85%;
+        min-width: 200px;
         padding: 20px;
         margin-bottom: 30px;
         border-radius: 1.25rem;
         border: 2px solid ${({ theme }) => theme.blue};
         box-shadow: 4px 4px 0.8rem rgba(0, 0, 0, 0.15);
+
+        @media screen and (max-width: 615px) {
+          width: 100%;
+        }
 
         &:last-child {
           margin-bottom: 0;
