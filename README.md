@@ -2,7 +2,7 @@
 
 # ✨ JUSTCODE 6기 오프라인 수료식 참가 여부 조사 ✨
 
-## 링크는 이쪽 👉👉👉 [설문을 진행해주세요. 🎉](https://2021bong.github.io/justcode-6th-completion-ceremony/)
+## 링크는 이쪽 👉👉👉 <a href="https://2021bong.github.io/justcode-6th-completion-ceremony/" target="_blank">설문을 진행해주세요. 🎉</a>
 
 ![main-face](https://user-images.githubusercontent.com/49029756/197056639-54793892-2c26-4888-b9cc-9f9cd4d57126.png)
 
@@ -106,6 +106,25 @@ http://localhost:5173/justcode-6th-completion-ceremony/
 <br />
 
 ---
+
+<br />
+<br />
+
+## 🎀 페이지 URL
+
+`메인` : http://localhost:5173/justcode-6th-completion-ceremony/
+<br />
+
+`일정 안내` : http://localhost:5173/justcode-6th-completion-ceremony/#/home
+<br />
+
+`정보 입력` : http://localhost:5173/justcode-6th-completion-ceremony/#/form
+<br />
+
+`제출 완료` : http://localhost:5173/justcode-6th-completion-ceremony/#/complete
+<br />
+
+`메세지 보기` : http://localhost:5173/justcode-6th-completion-ceremony/#/message
 
 <br />
 <br />

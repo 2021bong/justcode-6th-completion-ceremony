@@ -6,7 +6,7 @@ ${reset}
 
 * {
   box-sizing: border-box;
-  font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans KR', 'Noto Sans', sans-serif !important;
 }
 
 ul, ol, li {
