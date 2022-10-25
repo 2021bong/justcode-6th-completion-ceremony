@@ -1,15 +1,75 @@
+import { useEffect, useState } from 'react';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import styled from 'styled-components';
+import { GiPartyHat } from 'react-icons/gi';
+import { Link } from 'react-router-dom';
 
 const Message = () => {
+  const [list, setList] = useState();
+
+  useEffect(() => {
+    const loadData = async () => {
+      const firebaseConfig = {
+        apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+        authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+        projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+        storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+        messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+        appId: import.meta.env.VITE_FIREBASE_APP_ID,
+        measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+      };
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+      const memoRef = collection(db, 'attend-survey');
+      const allRes = await getDocs(memoRef);
+      let dataList = [];
+      allRes.forEach((res, i) => {
+        dataList.push({
+          id: res._document.key.path.segments[6],
+          name: res._document.data.value.mapValue.fields.name.stringValue,
+          email: res._document.data.value.mapValue.fields.email.stringValue,
+          attend: res._document.data.value.mapValue.fields.attend.stringValue,
+          dinner: res._document.data.value.mapValue.fields.dinner.stringValue,
+          memo: res._document.data.value.mapValue.fields.memo.stringValue,
+          createdAt:
+            res._document.data.value.mapValue.fields.createdAt.timestampValue,
+        });
+      });
+      const onlyJustcodeList = dataList
+        .map((el) => (el.name === '' ? { ...el, name: '익명' } : el))
+        .filter(
+          (el) => el.name !== 'Joomi' && el.name !== '김치링' && el.memo !== ''
+        );
+      setList(onlyJustcodeList);
+    };
+    loadData();
+  }, []);
+
+  console.log(list);
+
   return (
     <Body>
       <div className='mainContainer'>
+        <Link to='/' className='goToHome'>
+          <GiPartyHat size='3rem' />
+        </Link>
         <div className='titleContainer'>
           <h1>
             <span className='title'>마지막 한마디</span> 😀
           </h1>
         </div>
-        <div className='contentContainer'></div>
+        <ul className='contentContainer'>
+          {list &&
+            list.map((memo) => {
+              return (
+                <li key={memo.id} className='card'>
+                  <p className='name'>{memo.name}</p>
+                  <p className='memo'>{memo.memo}</p>
+                </li>
+              );
+            })}
+        </ul>
       </div>
     </Body>
   );
@@ -30,6 +90,7 @@ const Body = styled.div`
     no-repeat;
 
   .mainContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,14 +101,28 @@ const Body = styled.div`
     padding: 3.125rem;
     border-radius: 1.25rem;
     background-color: #fff;
-    font-size: 2.063rem;
     box-shadow: 6px 6px 1.25rem rgba(0, 0, 0, 0.15);
     color: ${({ theme }) => theme.text};
-    line-height: 2.5rem;
     transition: 300ms;
-    overflow: scroll;
+
+    .goToHome {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      cursor: pointer;
+      color: ${({ theme }) => theme.pink};
+
+      &:hover {
+        color: ${({ theme }) => theme.blue};
+      }
+
+      &:active {
+        color: ${({ theme }) => theme.purple};
+      }
+    }
 
     .titleContainer {
+      font-size: 2rem;
       margin-bottom: 1.875rem;
       font-weight: 900;
       text-align: center;
@@ -65,6 +140,42 @@ const Body = styled.div`
     }
 
     .contentContainer {
+      width: 100%;
+      height: 80%;
+      padding: 30px;
+      overflow: scroll;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .card {
+        width: 90%;
+        min-width: 300px;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 1.25rem;
+        border: 2px solid ${({ theme }) => theme.blue};
+        box-shadow: 4px 4px 0.8rem rgba(0, 0, 0, 0.15);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &:nth-child(2n) {
+          border: 2px solid ${({ theme }) => theme.purple};
+        }
+
+        .name {
+          font-weight: 700;
+          font-size: 1.1rem;
+          line-height: 1.4rem;
+          margin-bottom: 5px;
+        }
+
+        .memo {
+          line-height: 1.2rem;
+        }
+      }
     }
   }
 `;

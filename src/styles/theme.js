@@ -33,4 +33,6 @@ export const bg = '#f7f7f7';
 
 export const blue = 'rgb(5, 109, 255)';
 
-export const purple = 'rgb(197, 51, 255)';
+export const pink = 'rgb(197, 51, 255)';
+
+export const purple = 'rgb(118, 37, 202)';
