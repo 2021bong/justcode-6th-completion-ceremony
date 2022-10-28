@@ -112,19 +112,19 @@ http://localhost:5173/justcode-6th-completion-ceremony/
 
 ## 🎀 페이지 URL
 
-`메인` : http://localhost:5173/justcode-6th-completion-ceremony/
+`메인` : http://2021bong.github.io/justcode-6th-completion-ceremony/
 <br />
 
-`일정 안내` : http://localhost:5173/justcode-6th-completion-ceremony/#/home
+`일정 안내` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/home
 <br />
 
-`정보 입력` : http://localhost:5173/justcode-6th-completion-ceremony/#/form
+`정보 입력` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/form
 <br />
 
-`제출 완료` : http://localhost:5173/justcode-6th-completion-ceremony/#/complete
+`제출 완료` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/complete
 <br />
 
-`메세지 보기` : http://localhost:5173/justcode-6th-completion-ceremony/#/message
+`메세지 보기` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/message
 
 <br />
 <br />
