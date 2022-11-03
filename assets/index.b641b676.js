@@ -2353,7 +2353,7 @@ This typically indicates that your device does not have a healthy Internet conne
       }
     }
   }
-`,PA=()=>{const[e,t]=b.exports.useState();return b.exports.useEffect(()=>{(async()=>{const i=qd({apiKey:"AIzaSyBMtJ45y_ERKMzF7DlPlT7LA8iA_HG261w",authDomain:"justcode-6th-invitation.firebaseapp.com",projectId:"justcode-6th-invitation",storageBucket:"justcode-6th-invitation.appspot.com",messagingSenderId:"685076478393",appId:"1 =685076478393 =web =7172e25743aed4f902de68",measurementId:"G-Z00PR9BZX1"}),s=pw(i),o=dw(s,"attend-survey"),a=await CA(o);let l=[];a.forEach((c,h)=>{l.push({id:c._document.key.path.segments[6],name:c._document.data.value.mapValue.fields.name.stringValue,email:c._document.data.value.mapValue.fields.email.stringValue,attend:c._document.data.value.mapValue.fields.attend.stringValue,dinner:c._document.data.value.mapValue.fields.dinner.stringValue,memo:c._document.data.value.mapValue.fields.memo.stringValue,createdAt:c._document.data.value.mapValue.fields.createdAt.timestampValue})});const u=l.map(c=>c.name===""?{...c,name:"\uC775\uBA85"}:c).filter(c=>c.name!=="Joomi"&&c.name!=="\uAE40\uCE58\uB9C1"&&c.memo!=="");t(u)})()},[]),E(OA,{children:te("div",{className:"mainContainer",children:[E(no,{to:"/",className:"goToHome",children:E(TA,{size:"2.5rem"})}),E("div",{className:"titleContainer",children:te("h1",{children:[E("span",{className:"title",children:"\uB9C8\uC9C0\uB9C9 \uD55C\uB9C8\uB514"})," \u{1F600}"]})}),E("ul",{className:"contentContainer",children:e&&e.map(n=>te("li",{className:"card",children:[E("p",{className:"name",children:n.name}),E("p",{className:"memo",children:n.memo})]},n.id))})]})})},OA=Dn.div`
+`,PA=()=>{const[e,t]=b.exports.useState();return b.exports.useEffect(()=>{(async()=>{const i=qd({apiKey:"AIzaSyBMtJ45y_ERKMzF7DlPlT7LA8iA_HG261w",authDomain:"justcode-6th-invitation.firebaseapp.com",projectId:"justcode-6th-invitation",storageBucket:"justcode-6th-invitation.appspot.com",messagingSenderId:"685076478393",appId:"1 =685076478393 =web =7172e25743aed4f902de68",measurementId:"G-Z00PR9BZX1"}),s=pw(i),o=dw(s,"attend-survey"),a=await CA(o);let l=[];a.forEach((c,h)=>{l.push({id:c._document.key.path.segments[6],name:c._document.data.value.mapValue.fields.name.stringValue,email:c._document.data.value.mapValue.fields.email.stringValue,attend:c._document.data.value.mapValue.fields.attend.stringValue,dinner:c._document.data.value.mapValue.fields.dinner.stringValue,memo:c._document.data.value.mapValue.fields.memo.stringValue,createdAt:c._document.data.value.mapValue.fields.createdAt.timestampValue})});const u=l.map(c=>c.name===""?{...c,name:"\uC775\uBA85"}:c).filter(c=>c.memo!=="");t(u)})()},[]),E(OA,{children:te("div",{className:"mainContainer",children:[E(no,{to:"/",className:"goToHome",children:E(TA,{size:"2.5rem"})}),E("div",{className:"titleContainer",children:te("h1",{children:[E("span",{className:"title",children:"\uB9C8\uC9C0\uB9C9 \uD55C\uB9C8\uB514"})," \u{1F600}"]})}),E("ul",{className:"contentContainer",children:e&&e.map(n=>te("li",{className:"card",children:[E("p",{className:"name",children:n.name}),E("p",{className:"memo",children:n.memo})]},n.id))})]})})},OA=Dn.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2589,7 +2589,7 @@ ${_w}
 
 * {
   box-sizing: border-box;
-  font-family: 'Noto Sans KR', 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans KR', 'Noto Sans', sans-serif !important;
 }
 
 ul, ol, li {
