@@ -38,9 +38,7 @@ const Message = () => {
       });
       const onlyJustcodeList = dataList
         .map((el) => (el.name === '' ? { ...el, name: '익명' } : el))
-        .filter(
-          (el) => el.name !== 'Joomi' && el.name !== '김치링' && el.memo !== ''
-        );
+        .filter((el) => el.memo !== '');
       setList(onlyJustcodeList);
     };
     loadData();
