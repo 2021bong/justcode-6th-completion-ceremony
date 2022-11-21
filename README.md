@@ -28,6 +28,7 @@
 
 <br />
 
+```
     react
     react-dom
     react-router-dom
@@ -41,6 +42,7 @@
     react-icons
 
     js-confetti
+```
 
 <br />
 <br />
@@ -48,19 +50,34 @@
 
 ## 🏗 프로젝트 구조
 
-`public` : 파비콘과 이미지 파일 폴더
-<br />
-
-`src` : index.html과 package.json 등 중요 파일 폴더
-<br />
-
-`src/pages/home` : 랜딩 페이지와 메인 페이지 파일 폴더
-<br />
-
-`src/pages/form` : 설문 페이지와 설문 제출 완료 페이지 파일 폴더
-<br />
-
-`src/styles` : 전역 스타일 파일 폴더
+```
+├── .env
+├── .gitignore
+├── index.html
+├── node_modules
+├── package-lock.json
+├── package.json
+├── public
+│   ├── letter.svg
+│   └── main-face.png
+├── src
+│   ├── Router.jsx
+│   ├── main.jsx
+│   ├── pages
+│   │   ├── form
+│   │   │   ├── Complete.jsx
+│   │   │   └── FormPage.jsx
+│   │   ├── home
+│   │   │   ├── FirstPage.jsx
+│   │   │   └── Home.jsx
+│   │   └── message
+│   │       └── Message.jsx
+│   └── styles
+│       ├── GlobalStyle.js
+│       └── theme.js
+├── README.md
+└── vite.config.js
+```
 
 <br />
 <br />
