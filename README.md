@@ -28,6 +28,8 @@
 
 <br />
 
+<div align='left'>
+
 ```
     react
     react-dom
@@ -44,11 +46,15 @@
     js-confetti
 ```
 
+</div>
+
 <br />
 <br />
 <br />
 
 ## 🏗 프로젝트 구조
+
+<div align='left'>
 
 ```
 ├── .env
@@ -78,6 +84,8 @@
 ├── README.md
 └── vite.config.js
 ```
+
+</div>
 
 <br />
 <br />
@@ -156,6 +164,5 @@ http://localhost:5173/justcode-6th-completion-ceremony/
 <img width="1154" alt="제출 완료 페이지1" src="https://user-images.githubusercontent.com/49029756/197763743-41a86840-7fcb-4c4c-89ee-95a6f9fe17e5.png">
 <img width="1008" alt="제출 완료 페이지2" src="https://user-images.githubusercontent.com/49029756/197763758-be75c522-2199-44f6-a3cd-0547168ac054.png">
 <img width="1307" alt="메세지 페이지" src="https://user-images.githubusercontent.com/49029756/197763725-89196c75-8a0b-4754-a9bf-275a91bab596.png">
-
 
 </div>
