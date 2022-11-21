@@ -36,10 +36,10 @@ const Message = () => {
             res._document.data.value.mapValue.fields.createdAt.timestampValue,
         });
       });
-      const onlyJustcodeList = dataList
+      const onlyHaveMessage = dataList
         .map((el) => (el.name === '' ? { ...el, name: '익명' } : el))
         .filter((el) => el.memo !== '');
-      setList(onlyJustcodeList);
+      setList(onlyHaveMessage);
     };
     loadData();
   }, []);
