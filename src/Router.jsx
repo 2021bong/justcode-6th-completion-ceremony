@@ -11,7 +11,7 @@ import Message from './pages/message/Message';
 const Router = () => {
   const [name, setName] = useState('');
   return (
-    <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
+    <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path='/' element={<FirstPage />} />
