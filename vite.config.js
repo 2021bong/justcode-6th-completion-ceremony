@@ -7,5 +7,8 @@ export default defineConfig({
   base: '/justcode-6th-completion-ceremony/',
   build: {
     chunkSizeWarningLimit: 1600,
+    build: {
+      outDir: '../dist',
+    },
   },
 });
