@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsHandIndexThumb } from 'react-icons/bs';
+import { AiTwotoneContainer } from 'react-icons/ai';
 import styled from 'styled-components';
 
 const Home = () => {
@@ -19,6 +20,13 @@ const Home = () => {
   return (
     <Wrap>
       <main className='mainContainer'>
+        <Link to='/message'>
+          <AiTwotoneContainer
+            className='messageIcon'
+            size='1.8rem'
+            title='모두의 메세지 보러가기'
+          />
+        </Link>
         <div className='titleContainer'>
           <h1 className='title'>
             <span className='impact'>
@@ -73,6 +81,7 @@ const Wrap = styled.div`
   align-items: center;
 
   .mainContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,6 +120,28 @@ const Wrap = styled.div`
       padding: 1.125rem 0;
     }
 
+    .messageIcon {
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      margin-top: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      color: ${({ theme }) => theme.purple};
+
+      &:hover {
+        color: ${({ theme }) => theme.blue};
+      }
+
+      &:active {
+        color: ${({ theme }) => theme.pink};
+      }
+
+      @media screen and (max-width: 449px) {
+        top: 0.5rem;
+        left: 1rem;
+      }
+    }
     .titleContainer {
       width: 70%;
       border-bottom: 1px solid #ccc;

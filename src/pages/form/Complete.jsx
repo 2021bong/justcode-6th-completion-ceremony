@@ -48,7 +48,7 @@ const Complete = ({ name, setName }) => {
           <p>
             수료식 때 만나요<Shakehand shake={shake}>👋</Shakehand>
           </p>
-          <Link to='/message'>
+          <Link to='/message' onClick={() => setName('')}>
             <AiTwotoneContainer className='message' size='1.8rem' />
             <ClickMessage $blink={blink}>
               <BsHandIndexThumb size='1.5rem' />

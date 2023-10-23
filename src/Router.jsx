@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, HashRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import * as theme from './styles/theme';
 import FirstPage from './pages/home/FirstPage';
@@ -11,7 +11,7 @@ import Message from './pages/message/Message';
 const Router = () => {
   const [name, setName] = useState('');
   return (
-    <HashRouter>
+    <BrowserRouter basename={import.meta.env.VITE_PUBLIC_URL}>
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path='/' element={<FirstPage />} />
@@ -25,9 +25,10 @@ const Router = () => {
             element={<Complete name={name} setName={setName} />}
           />
           <Route path='/message' element={<Message />} />
+          <Route path='*' element={<FirstPage />} />
         </Routes>
       </ThemeProvider>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 
