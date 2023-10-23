@@ -2,7 +2,7 @@
 
 # ✨ JUSTCODE 6기 오프라인 수료식 참가 여부 조사 ✨
 
-## 링크는 이쪽 👉👉👉 [설문을 진행해주세요. 🎉](https://2021bong.github.io/justcode-6th-completion-ceremony/)
+## 링크는 이쪽 👉👉👉 [설문을 진행해주세요. 🎉](https://justcode-6th-completion-ceremony.vercel.app/)
 
 ![main-face](https://user-images.githubusercontent.com/49029756/197056639-54793892-2c26-4888-b9cc-9f9cd4d57126.png)
 
@@ -32,18 +32,7 @@
 
 ```
     react
-    react-dom
-    react-router-dom
-    react-scripts
-
     firebase
-
-    styled-components
-    styled-reset
-
-    react-icons
-
-    js-confetti
 ```
 
 </div>
@@ -124,7 +113,7 @@ npm run dev
 해당 주소로 브라우저에서 확인할 수 있습니다.
 
 ```
-http://localhost:5173/justcode-6th-completion-ceremony/
+http://localhost:5173/
 ```
 
 <br />
@@ -137,19 +126,19 @@ http://localhost:5173/justcode-6th-completion-ceremony/
 
 ## 🎀 페이지 URL
 
-`메인` : http://2021bong.github.io/justcode-6th-completion-ceremony/
+`메인` : /
 <br />
 
-`일정 안내` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/home
+`일정 안내` : /home
 <br />
 
-`정보 입력` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/form
+`정보 입력` : /form
 <br />
 
-`제출 완료` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/complete
+`제출 완료` : /complete
 <br />
 
-`메세지 보기` : http://2021bong.github.io/justcode-6th-completion-ceremony/#/message
+`메세지 보기` : /message
 
 <br />
 <br />
